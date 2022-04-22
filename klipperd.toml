@@ -1,0 +1,88 @@
+[ender3]
+
+	[ender3.daemon]
+		# Where is the klipper binary 
+		BinDir = "/usr/bin/klipperd"
+	
+		# Volatile directory where klipper printer objects will be created
+		RunDir = "/var/run/klipperd/"
+	
+		# Which group should klipper run as?
+		# By default klipper run as the user (and group) that executes it
+		RunUser = "klipper"
+		RunGroup = "klipper"
+	
+	[ender3.configuration]
+		ConfigDir = "/etc/klipperd/"
+	
+		# When configuration changes are made by the system should the system
+		# automatically restart?
+		RestartOnCommit = true
+
+	[ender3.backup]
+		# Should configuration files be backed up prior to commiting any changes?
+		BackupConfig = true
+	
+		# Directory to store backups
+		BackupDir = "/etc/klipperd/backups"
+	
+		# Place old backup files into a a Tarball
+		ArchiveBackups = true
+	
+		# Compress backup archive with XZ
+		CompressBackups = true
+	
+	[ender3.logging]
+		# Enable logging
+		LoggingEnable = true
+
+		LoggingMode = "local"
+	
+		[ender3.logging.local]
+			LogDir = "/var/log/klipperd/"
+			RotateLogs = true
+	
+
+[cr10]
+
+	[cr10.daemon]
+		# Where is the klipper binary
+		BinDir = "/usr/bin/klipperd"
+
+		# Volatile directory where klipper printer objects will be created
+		RunDir = "/var/run/klipperd/"
+
+		# Which group should klipper run as?
+		# By default klipper run as the user (and group) that executes it
+		RunUser = "klipper"
+		RunGroup = "klipper"
+
+	[cr10.configuration]
+		ConfigDir = "/etc/klipperd/"
+
+		# When configuration changes are made by the system should the system
+		# automatically restart?
+		RestartOnCommit = true
+
+	[cr10.backup]
+		# Should configuration files be backed up prior to commiting any changes?
+		BackupConfig = true
+
+		# Directory to store backups
+		BackupDir = "/etc/klipperd/backups"
+
+		# Place old backup files into a a Tarball
+		ArchiveBackups = true
+
+		# Compress backup archive with XZ
+		CompressBackups = true
+
+	[cr10.logging]
+		# Options for logging destination
+		# "Local" - Write log file to local directory on the system
+		# "Remote" - Write log file to remote syslog server
+		LoggingMode = "remote"
+
+		[ender3.logging.remote]
+			Server = "10.10.10.15"
+			Port = 541
